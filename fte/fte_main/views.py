@@ -15,4 +15,5 @@ def index(request):
             c.conv_gsp()
     else:
         form = FTEMainForm()
-    return render(request, 'fte_init.html', {'a':2, 'form':form})
+    #return render(request, 'fte_init.html', {'a':2, 'form':form})
+    return render(request, 'index.html', {'a':2, 'form':form})

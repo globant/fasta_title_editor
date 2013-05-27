@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../static/styles.css">
+
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300,800|Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+<title>FTE - FASTA Title Editor</title>
+
+
+<link rel="stylesheet" href="../static/reveal.css">
+
+
+<script src="../static/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="../static/jquery.reveal.js" type="text/javascript"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+
+	<div id="wrapper">
+    
+    	<img src="../static/images/background-01-01-01.png" alt="interface background" />
+    
+    <div id="content_main">
+    	
+    
+    	<div id="header">
+        
+        	<a href="#" id="logo_area">
+            	</a>
+            
+            
+        
+        
+        	<ul>
+            	<li class="link1"><a href="#">SOURCE CODE</a></li>
+                <li class="link2"><a href="#">HELP</a></li>
+                <li class="link3"><a href="#">ABOUT</a></li>
+			</ul>
+		</div>    
+    
+    	
+        	
+			        
+        
+        	<form>
+            	
+             	 <a id="upload_btn" href="#"></a>
+                 <div id="upload_text" class="button_text">
+                 	<p>UPLOAD<br /> FILE</p>
+                 </div>
+                <a id="fill_btn" href="#"></a>
+                
+                <div id="text_step1" class="texts_explain">
+                	<p>You can upload a file or paste the sequences.</p>
+                </div>
+                
+                
+                <div id="input_container"> 
+                  <textarea name="input_sequences" class="default-value"  id="inputTextboxId">
+                  </textarea>
+                </div>
+                
+                 
+                 
+                 
+                  <div id="text_step2" class="texts_explain">
+                	<p>You can delete any of the title items and you can add your own data.</p>
+                </div>
+                 
+            
+            
+
+            
+ <div id="filter_container">       
+     
+            
+     <div id="sqc_filter"> 
+                 
+          <div id="sqc_element1" class="sqc_element" data-reveal-id="confirm_delete">
+                     	
+                       <h3>gi</h3>
+                    	
+                     
+                        
+                    </div>    
+                    
+                  <div id="sqc_element2" class="sqc_element" data-reveal-id="confirm_delete">
+                  		
+                       
+                          <h3>Acc. Number</h3>
+                        
+                    </div>
+                   
+                    <div id="sqc_element3" class="sqc_element" data-reveal-id="confirm_delete">
+                    
+                    	
+                          <h3>species</h3>
+                    </div>
+                    
+                
+                    
+              		<div  id="users_data" data-reveal-id="myModal" class="sqc_element" >
+                    <h3>User´s data</h3> 
+                   
+                    
+                    </div>   
+                    
+                    
+                 
+                
+            
+      </div>
+        
+ </div>       
+ 
+ 
+ 				<p style="position:absolute; left: 427px; top:350px; font-family:'Open Sans Condensed', Sans; color:#C1D82F; font-size: 14px; font-weight:bold;">CLICK ON THE ITEMS TO DELETE THEM</p> 
+                
+                <div id="process_btn" data-reveal-id="confirm_process">
+                <a  href="#"  ></a>
+                </div>
+                
+                <div id="process_text" class="button_text">
+                 	<p>PROCESS<br /> DATA</p>
+                 </div>
+                
+                
+                
+                 <div id="refresh_btn">
+                <a  href="#"  ></a>
+                </div>
+                
+                
+                
+       			
+    					
+                
+                
+        	
+                
+        	</form>
+            
+            <!--Add Your Data Popup-->
+    
+    
+    					<div id="myModal" class="reveal-modal">
+                        
+                        	<div class="popup_text_box">
+                        	
+                        	<h3>Please enter your data</h3>
+     						
+                            <p><strong style="display:inline;">Note:</strong> This text will be inserted after the existing title data in the selected position.</p>
+                            <h5>User´s data 1:</h5>
+                            <input type="textarea" name="new_element_content" id="new_element_content" class="input_data_field"/>
+                            <h5>User´s data 2:</h5>
+                            <input type="textarea" name="new_element_content" id="new_element_content" class="input_data_field"/>
+                            <h5>User´s data 3:</h5>
+                            <input type="textarea" name="new_element_content" id="new_element_content" class="input_data_field"/>
+     						
+                            
+                            
+    						
+                            </div>
+                            
+                            <a class="close-reveal-modal">&#215;</a>
+                            
+                            
+                            
+                            <div class="buttons_box">
+                        		<div id="edit_accept_btn" class="close-reveal-modal" name="">
+                                	
+                                
+                                </div>
+                            	<div id="edit_cancel_btn" class="close-reveal-modal">
+                                
+                                
+                                </div>
+                            </div>
+    
+    					</div>
+            
+            
+            
+            
+              <!--Confirm Process Popup-->
+              
+              
+              			<div id="confirm_process" class="reveal-modal">
+                        
+                        	<div class="popup_text_box">
+                        	
+                        	<h3>Confirmation</h3>
+     						
+                            <p>This is the output configuration for the titles in the sequences. Please confirm.</p>
+                            <p><strong>Note:</strong> gi, Accession number and species corresponds to each sequence in the batch. The data added by the user during the configuration instance will be inserted in all the sequences.</p>
+                            <div id="title_preview">
+                            <p id="title_preview">>gi|Accession number|species| user´s data #1 | user´s data #2 | user´s data #3</p>
+                            </div>
+     						
+                            <div class="buttons_box marginTop50">
+                        		<div id="edit_accept_btn" class="close-reveal-modal" name="">
+                                	
+                                
+                                </div>
+                            	<div id="edit_cancel_btn" class="close-reveal-modal">
+                                
+                                
+                                </div>
+                            </div>
+                            
+    						
+                            </div>
+                            
+                            <a class="close-reveal-modal">&#215;</a>
+    
+    					</div>
+              
+            
+            
+            
+            
+            
+     <!--------------------------Delete Sequence element PoP up -------------------------------->
+     
+     
+     
+     				<div id="confirm_delete" class="reveal-modal">
+                    
+                    
+                    <div class="popup_text_box">
+                    
+                    	<h3>Delete item</h3>
+                    
+                    	<p>This item cannot be edited. User can only delete it if needed.</p>
+                        <p id="question">Do you want to delete it?</p>
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    <div class="buttons_box">
+                    
+                    	<div id="edit_accept_btn" class="close-reveal-modal close" name=""></div> 
+                        <div id="edit_cancel_btn" class="close-reveal-modal"> </div>
+                    
+                    </div>
+                    
+                    <a class="close-reveal-modal">&#215;</a>
+                    
+                    </div>       
+            
+            
+            
+            
+             <div id="output_container">
+             
+             
+             
+             	 <div id="text_step3" class="texts_explain">
+                	<p>You can download the file or you can copy the data.</p>
+                </div>
+             
+             
+              	<a id="copy_btn" href="#"></a>
+                <a id="download_btn" href="#"></a> 
+                
+                 <div id="download_text" class="button_text">
+                 	<p>DOWNLOAD<br /> FILE</p>
+                 </div>
+             
+             
+             <div id="output_display">
+             </div>
+       
+        </div>
+		
+        
+ 
+        
+        
+      
+		
+        
+        <div id="foot">
+        	
+            <a href="http://inta.gob.ar/"><div id="logo_inta"></div></a>
+            <a href="http://www.globant.com/"><div id="logo_globant"></div></a>
+            
+		</div>
+		
+        </div>
+        
+        
+        
+        
+    
+    
+        
+        
+
+	</div>
+    
+    
+    
+   
+    
+    
+    <link href="../static/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+<!--
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+-->
+
+
+<!-- Get Google CDN's jQuery and jQuery UI with fallback to local -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="jquery/jquery-1.7.2.min.js"%3E%3C/script%3E'))</script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script>!window.jQuery.ui && document.write(unescape('%3Cscript src="jquery/jquery-ui-1.8.21.custom.min.js"%3E%3C/script%3E'))</script>
+
+<script type="text/javascript" src="../static/watermark.jquery.min.js"></script>
+<script type="text/javascript" src="../static/js_scripts.js"></script>
+<script type="text/javascript" src="../static/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="../static/jquery.mCustomScrollbar.js"></script>
+
+
+<script>
+    (function($){
+        $(window).load(function(){
+            $(".content").mCustomScrollbar();
+        });
+    })(jQuery);
+</script>
+    
+    
+    
+<!--http://manos.malihu.gr/jquery-custom-content-scroller/
+for information about plugin-->
+    
+    
+    
+    
+    
+    <script type="text/javascript">
+$(document).ready(function() {
+     $('.').click(function(e) {
+          e.preventDefault();
+	  $('#edit_element_popup').reveal();
+     });
+});
+</script>
+    
+    
+
+
+    
+
+</body>
+</html>
