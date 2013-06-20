@@ -1,3 +1,5 @@
+import os
+
 # Django settings for fte project.
 
 DEBUG = True
@@ -68,10 +70,12 @@ STATIC_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
+BASE_DIR = ''
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(BASE_DIR, "static"),
 )
 
 # List of finder classes that know how to find static files in
@@ -83,7 +87,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '8d18()*d0q&cp*+rn3d5b^chip%5#=rc7+&gtr+n0*e=p@j^f#'
+SECRET_KEY = '8d18()*d0q&cpd5b^chip%5#=rc7+&gtr+n0*e=p@j^f#'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
