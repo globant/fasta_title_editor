@@ -1,5 +1,4 @@
-#from django.http import HttpResponse
-
+from django.http import HttpResponse
 from tempfile import NamedTemporaryFile, mkstemp
 
 from fte_main.forms import FTEMainForm
@@ -23,13 +22,21 @@ def index(request):
             x = request.FILES['infile']
             c = Convert_fasta_header(x, tmpfile_name, custom_label)
             c.conv_gsp()
-            t_name = settings.TMP_DIR + os.path.split(tmpfile.name)[1]
-            d = {'tmpfile_nametmpfile_name':t_name,}
+            f_name = os.path.split(tmpfile.name)[1]
+            t_name = settings.TMP_DIR + f_name
+            d = {'t_name':t_name, 'f_name':f_name}
         return render(request, 'index_result.html', d)
 
     else:
         form = FTEMainForm()
-    #return render(request, 'fte_init.html', {'a':2, 'form':form})
-    #return render(request, 'index.html', {'a':2, 'form':form})
     return render(request, 'index.html', {'a':2})
     
+def downloadstatic(request, download_file=''):
+    f = os.path.join(settings.PROJECT_ROOT, 
+                     'fte/fte_main/outfiles/',
+                     download_file)
+    response = HttpResponse(open(f).read(), 
+                            content_type="text/plain")
+    return response
+
+

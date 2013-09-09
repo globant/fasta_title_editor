@@ -2,9 +2,9 @@ from fte.settings import *
 
 import os
 
-BASE_DIR = '/XXXX/fte/fasta_title_editor/fte/fte_main/'
+BASE_DIR = '/HOME/fte/fasta_title_editor/fte/fte_main/'
 TMP_DIR = '/tmp/'
-
+PROJECT_ROOT = '/HOME/projects/fte/fasta_title_editor/'
 
 TEMPLATE_DIRS = (
    os.path.join(BASE_DIR,'templates'),
