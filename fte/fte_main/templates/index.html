@@ -23,14 +23,17 @@
 
 
 
-<form action="/result/" role="form" method="post" enctype="multipart/form-data">
+<div class="row">
+<div class="col-md-3 col-md-offset-2">
+
+<form action="" role="form" method="post" enctype="multipart/form-data">
   <div class="form-group">
-    <label for="exampleInputEmail1">Word</label>
-    <input type="text" name="ct" class="form-control" placeholder="Custom text">
+    <label for="customlabel">Word</label>
+    <input type="text" name="custom_label" class="form-control" placeholder="Custom text">
   </div>
   <div class="form-group">
     <label for="exampleInputFile">File input</label>
-    <input type="file" name="exampleInputFile">
+    <input type="file" name="infile">
     <p class="help-block">Example block-level help text here.</p>
   </div>
   <div class="checkbox">
@@ -42,7 +45,8 @@
 {% csrf_token %}
 </form>
 
-
+</div>
+</div>
 
 
 <!-- <input type="text" class="form-control" placeholder="Add word"> -->

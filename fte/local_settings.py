@@ -3,6 +3,8 @@ from fte.settings import *
 import os
 
 BASE_DIR = '/XXXX/fte/fasta_title_editor/fte/fte_main/'
+TMP_DIR = '/tmp/'
+
 
 TEMPLATE_DIRS = (
    os.path.join(BASE_DIR,'templates'),
